@@ -1,0 +1,249 @@
+.grievance-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.form-header {
+  background: #1e3a8a;
+  color: white;
+  padding: 32px 24px 24px;
+  border-radius: 16px 16px 0 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+  position: relative;
+}
+
+.logo-section {
+  margin: 0 auto 20px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.police-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-title {
+  margin-top: 10px;
+}
+
+.header-title h1 {
+  margin: 12px 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.header-title h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.grievance-form {
+  background: white;
+  padding: 36px 32px;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.form-section h3 {
+  color: #1e3a8a;
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15);
+}
+
+.form-group select {
+  height: 56px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236b7280'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 18px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+}
+
+.submit-button:hover {
+  background: #1e40af;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.5);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive for tablets and small desktops */
+@media (max-width: 1080px) {
+  .grievance-container { padding: 16px; }
+  .logo-section { width: 120px; height: 120px; }
+  .header-title h1 { font-size: 24px; }
+  .header-title h2 { font-size: 19px; }
+  .grievance-form { padding: 32px 28px; }
+}
+
+/* Stack columns on medium screens */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+/* Mobile: full-screen fixed form and stacked layout */
+@media (max-width: 480px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  .grievance-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .form-header {
+    border-radius: 0;
+    padding: 18px 16px;
+    box-shadow: none;
+  }
+
+  .logo-section {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px;
+  }
+
+  .police-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header-title h1 {
+    font-size: 18px;
+    margin: 8px 0 4px;
+  }
+
+  .header-title h2 {
+    font-size: 15px;
+  }
+
+  .grievance-form {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 12px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .form-group textarea {
+    min-height: 110px;
+  }
+
+  .submit-button {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+}
