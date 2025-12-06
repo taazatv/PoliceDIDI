@@ -6,20 +6,33 @@ function App() {
   const [showOverlay, setShowOverlay] = useState(false);
   const timerRef = useRef(null);
 
-  // Start 5-second inactivity timer
-  useEffect(() => {
+  // Function to start the inactivity timer
+  const startTimer = () => {
+    clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       setShowOverlay(true);
-    }, 15000);
+    }, 15000); // 15 seconds
+  };
 
-    return () => clearTimeout(timerRef.current);
-  }, []);
-
-  // Remove overlay on click/touch
+  // Reset timer on user activity
   const handleUserActivity = () => {
-    clearTimeout(timerRef.current);
+    startTimer();
     setShowOverlay(false);
   };
+
+  useEffect(() => {
+    startTimer();
+
+    // Listen for clicks and touches anywhere on the page
+    window.addEventListener("click", handleUserActivity);
+    window.addEventListener("touchstart", handleUserActivity);
+
+    return () => {
+      clearTimeout(timerRef.current);
+      window.removeEventListener("click", handleUserActivity);
+      window.removeEventListener("touchstart", handleUserActivity);
+    };
+  }, []);
 
   return (
     <>
@@ -27,7 +40,7 @@ function App() {
       {showOverlay && (
         <div className="overlay" onClick={() => setShowOverlay(false)}>
           <div className="overlay-slider">
-            <img src="/img1.jpg.jpg" alt="Overlay" />
+            <img src="/img1.jpg" alt="Overlay" />
           </div>
         </div>
       )}
