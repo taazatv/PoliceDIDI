@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     timerRef.current = setTimeout(() => {
       setShowOverlay(true);
-    }, 5000);
+    }, 15000);
 
     return () => clearTimeout(timerRef.current);
   }, []);
